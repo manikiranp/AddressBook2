@@ -3,33 +3,42 @@ package Addressbook;
 import java.util.Scanner;
 
 
+
+
 public class Addressbook {
 	public static void main(String[] args) {
-		System.out.println("Welcome to Address Book Program");
-		addcontact();
+		System.out.println("Welcome to Address Book Program");	
+			int cond = 1;
+			while (cond == 1) {
+				AddressbookManager menu = new AddressbookManager();
+				System.out.println("Address Book:\n"
+						+ "1) Add Person\n"
+						+ "2) Display\n"
+						+ "0) Close");
+				Scanner inp = new Scanner(System.in);
+				System.out.println("Select an option:");
+				int num=inp.nextInt();
+				switch (num) {
+				case 1:
+					menu.Addcontact();
+					break;
+				case 2:
+					menu.display();
+					break;
+				case 0:
+					cond=0;
+					break;
+				default:
+					System.out.println("Wrong option");
+					break;
+				}
+				
+			
+		}
+		
 		
 	}
 
-	private static void addcontact() {
-		Scanner inp = new Scanner(System.in);
-		System.out.println("Enter the firstName:");
-		String firstName = inp.nextLine();
-		System.out.println("Enter the LastName:");
-		String lastName = inp.nextLine();
-		System.out.println("Enter the phone:");
-		String phonenum = inp.nextLine();
-		System.out.println("\nAddress:");
-		System.out.println("Enter the city:");
-		String city = inp.nextLine();
-		System.out.println("Enter the state:");
-		String state = inp.nextLine();
-		System.out.println("Enter the zipcode:");
-		String zipcode = inp.nextLine();
-		System.out.println("Enter the email-id:");
-		String email = inp.nextLine();
-		Address a = new Address(city,state,zipcode,email);
-		Person p = new Person(firstName, lastName, phonenum, a);
-		System.out.println(p.toString());
-	}
+	
 
 }
