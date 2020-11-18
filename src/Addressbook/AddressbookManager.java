@@ -79,9 +79,28 @@ public class AddressbookManager {
 						}
 					}
 				}
+					else  {
+						System.out.println("Name not found");
+					}
+			}
 				
+			}
+			public void deleteperson() {
+			Scanner inp = new Scanner(System.in);
+				System.out.println("Enter firstname to delete its entries");
+				String name1 = inp.nextLine();
+				for (int i=0; i<contatcs.size(); i++) {
+					String personName = contatcs.get(i).firstname;
+					if (name1.equals(personName)) {
+						contatcs.remove(i);
+						System.out.println("Entry deleted");
+					}
+					else  {
+						System.out.println("Name not found");
+					}
 				}
+			}
 			
-		}
+		
 	
 }

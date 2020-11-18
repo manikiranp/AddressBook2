@@ -15,6 +15,7 @@ public class Addressbook {
 						+ "1) Add Person\n"
 						+ "2) Display\n"
 						+ "3) Edit Person\n"
+						+ "4) Delete Person\n"
 						+ "0) Close");
 				Scanner inp = new Scanner(System.in);
 				System.out.println("Select an option:");
@@ -29,6 +30,9 @@ public class Addressbook {
 				case 3:
 					menu.editperson();
 					break;
+				case 4:
+					menu.deleteperson();
+					break;
 				case 0:
 					cond=0;
 					break;
@@ -36,10 +40,8 @@ public class Addressbook {
 					System.out.println("Wrong option");
 					break;
 				}
-				
-			
-		}
-		
+
+			}		
 		
 	}
 
