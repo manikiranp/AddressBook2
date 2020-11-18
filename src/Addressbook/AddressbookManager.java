@@ -3,13 +3,14 @@ package Addressbook;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AddressbookManager {
+public class AddressbookManager implements AddressbookInterface {
 	public static ArrayList<Person> contatcs = new ArrayList<Person>();
+	private Scanner inp;
 	
 	
 	public void Addcontact() {
 		
-		Scanner inp = new Scanner(System.in);
+		inp = new Scanner(System.in);
 		System.out.println("Enter the firstName:");
 		String firstName = inp.nextLine();
 		System.out.println("Enter the LastName:");
@@ -36,7 +37,7 @@ public class AddressbookManager {
 		
 	}
 		public void editperson() {
-			Scanner inp = new Scanner(System.in); 
+			inp = new Scanner(System.in); 
 			int cond=1;
 			System.out.println("Enter firstname to update details");
 			String name = inp.nextLine();
@@ -72,7 +73,7 @@ public class AddressbookManager {
 						
 					case 3:
 						cond = 0;
-						break;
+					     	break;
 					default:
 						System.out.println("Wrong choice");
 						break;
@@ -86,7 +87,7 @@ public class AddressbookManager {
 				
 			}
 			public void deleteperson() {
-			Scanner inp = new Scanner(System.in);
+			inp = new Scanner(System.in);
 				System.out.println("Enter firstname to delete its entries");
 				String name1 = inp.nextLine();
 				for (int i=0; i<contatcs.size(); i++) {
