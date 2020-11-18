@@ -14,6 +14,7 @@ public class Addressbook {
 				System.out.println("Address Book:\n"
 						+ "1) Add Person\n"
 						+ "2) Display\n"
+						+ "3) Edit Person\n"
 						+ "0) Close");
 				Scanner inp = new Scanner(System.in);
 				System.out.println("Select an option:");
@@ -24,6 +25,9 @@ public class Addressbook {
 					break;
 				case 2:
 					menu.display();
+					break;
+				case 3:
+					menu.editperson();
 					break;
 				case 0:
 					cond=0;
