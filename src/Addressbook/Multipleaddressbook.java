@@ -55,6 +55,7 @@ public class Multipleaddressbook  {
 				+ "2) Display\n"
 				+ "3) Edit Person\n"
 				+ "4) Delete Person\n"
+				+ "5) Search\n"
 				+ "0) Close");
 		
 		System.out.println("Select an option:");
@@ -72,6 +73,9 @@ public class Multipleaddressbook  {
 		case 4:
 			menu.deleteperson();
 			break;
+		case 5:
+			menu.search();
+			break;
 		case 0:
 			cond=0;
 			break;
@@ -81,10 +85,11 @@ public class Multipleaddressbook  {
 			}
 				}
 	}
+		}
 	 if (filefound==false) {
 		 System.out.println("Addressbook not found");
 		 }
 		
-		}
+		
 	}
 }

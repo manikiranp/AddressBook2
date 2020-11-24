@@ -7,20 +7,22 @@ public class AddressbookManager implements AddressbookInterface {
 	public static ArrayList<Person>  contacts = new ArrayList<Person> ();
 	
 	private Scanner inp;
+
+	
 	
 	public void Addcontact() {
 		
 		inp = new Scanner(System.in);
 		System.out.println("Enter the firstName:");
 		String firstName = inp.nextLine();
-		boolean found=false;
+		boolean isfound=false;
 		for (Person p : contacts) {
-			if(p.firstname==firstName);
-			found=true;
-			
-		
+			if (p.firstname.equals(firstName)) { 
+			isfound=true; 
+			System.out.println("Name already present");
+			}
 		}
-		if (found==false) {
+			if(isfound==false) {
 			System.out.println("Enter the LastName:");
 			String lastName = inp.nextLine();
 			System.out.println("Enter the phone:");
@@ -34,18 +36,16 @@ public class AddressbookManager implements AddressbookInterface {
 			String zipcode = inp.nextLine();
 			System.out.println("Enter the email-id:");
 			String email = inp.nextLine();
-			Person p = new Person(firstName, lastName, phonenum,city,state,zipcode,email);
-			contacts.add(p);
-			
-		}
-		else {
-			System.out.println("Already present");
-		}
-		
-		
-		
-		
+			Person p1 = new Person(firstName, lastName, phonenum,city,state,zipcode,email);
+			contacts.add(p1);
+			}
+//			else {
+//				System.out.println("Name already present");
+//			}
 	}
+
+		
+
 		public void display() {
 		for (Person person : contacts) {
 			System.out.println(person.toString());
@@ -118,7 +118,38 @@ public class AddressbookManager implements AddressbookInterface {
 					}
 				}
 			}
+			public void search() {
+				int cond=1; 
+				while (cond == 1) {
+				Searching menu = new Searching();
+			System.out.println("Address Book:\n"
+				+ "1) Search by Person\n"
+				+ "2) Search by City\n"
+				+ "3) Search by State\n"
+				+ "0) Close");
 			
+		System.out.println("Select an option:");
+		int num=inp.nextInt();
+		switch (num) {
+		case 1:
+			menu.searchperson();
+			break;
+		case 2:
+			menu.searchcity();
+			break;
+		case 3:
+			menu.searchstate();
+			break;
+		case 0:
+			cond=0;
+			break;
+		default:
+			System.out.println("Wrong option");
+			break;
+			}
+				}
+				
+			}
 		
 	
 }
