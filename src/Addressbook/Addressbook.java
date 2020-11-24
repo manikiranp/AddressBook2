@@ -6,31 +6,23 @@ import java.util.Scanner;
 public class Addressbook {
 	
 	public static void main(String[] args) {
-		System.out.println("Welcome to Address Book Program");	
+		System.out.println("Welcome to Address Book Program");
 			int cond = 1;
 			while (cond == 1) {
-				AddressbookManager menu = new AddressbookManager();
-				System.out.println("Address Book:\n"
-						+ "1) Add Person\n"
-						+ "2) Display\n"
-						+ "3) Edit Person\n"
-						+ "4) Delete Person\n"
+				Multipleaddressbook menu = new Multipleaddressbook(); 
+				System.out.println("Address Book Manager:\n"
+						+ "1) New Addressbook\n"
+						+ "2) Open Addressbook\n"
 						+ "0) Close");
 				Scanner inp = new Scanner(System.in);
 				System.out.println("Select an option:");
 				int num=inp.nextInt();
 				switch (num) {
 				case 1:
-					menu.Addcontact();
+					menu.Createaddressbook();
 					break;
 				case 2:
-					menu.display();
-					break;
-				case 3:
-					menu.editperson();
-					break;
-				case 4:
-					menu.deleteperson();
+					menu.Openaddressbook();
 					break;
 				case 0:
 					cond=0;

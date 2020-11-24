@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressbookManager implements AddressbookInterface {
-	public static ArrayList<Person> contatcs = new ArrayList<Person>();
-	private Scanner inp;
+	public static ArrayList<Person>  contacts = new ArrayList<Person> ();
 	
+	private Scanner inp;
 	
 	public void Addcontact() {
 		
@@ -27,10 +27,12 @@ public class AddressbookManager implements AddressbookInterface {
 		System.out.println("Enter the email-id:");
 		String email = inp.nextLine();
 		Person p = new Person(firstName, lastName, phonenum,city,state,zipcode,email);
-		contatcs.add(p);
+		contacts.add(p);
+		
+		
 	}
 		public void display() {
-		for (Person person : contatcs) {
+		for (Person person : contacts) {
 			System.out.println(person.toString());
 			
 		}
@@ -41,7 +43,7 @@ public class AddressbookManager implements AddressbookInterface {
 			int cond=1;
 			System.out.println("Enter firstname to update details");
 			String name = inp.nextLine();
-			for (Person person : contatcs) {
+			for (Person person : contacts) {
 				if (name.equals(person.firstname)) {
 					while (cond==1)  {
 						System.out.println("\"Select an option to edit:\n"
@@ -90,10 +92,10 @@ public class AddressbookManager implements AddressbookInterface {
 			inp = new Scanner(System.in);
 				System.out.println("Enter firstname to delete its entries");
 				String name1 = inp.nextLine();
-				for (int i=0; i<contatcs.size(); i++) {
-					String personName = contatcs.get(i).firstname;
+				for (int i=0; i<contacts.size(); i++) {
+					String personName = contacts.get(i).firstname;
 					if (name1.equals(personName)) {
-						contatcs.remove(i);
+						contacts.remove(i);
 						System.out.println("Entry deleted");
 					}
 					else  {
