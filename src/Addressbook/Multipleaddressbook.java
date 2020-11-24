@@ -8,7 +8,9 @@ import java.util.*;
 
 public class Multipleaddressbook  {
 	private Scanner inp = new Scanner(System.in);
-	String name,filename; 
+	String name,filename;
+	
+	HashMap<String,ArrayList<Person>> hashbook = new HashMap<String,ArrayList<Person>>(); 
 
 	public void Createaddressbook() {	 
 		System.out.println("Enter new addressbook name:");

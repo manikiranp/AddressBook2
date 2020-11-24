@@ -13,21 +13,36 @@ public class AddressbookManager implements AddressbookInterface {
 		inp = new Scanner(System.in);
 		System.out.println("Enter the firstName:");
 		String firstName = inp.nextLine();
-		System.out.println("Enter the LastName:");
-		String lastName = inp.nextLine();
-		System.out.println("Enter the phone:");
-		String phonenum = inp.nextLine();
-		System.out.println("\nAddress Details:");
-		System.out.println("Enter the city:");
-		String city = inp.nextLine();
-		System.out.println("Enter the state:");
-		String state = inp.nextLine();
-		System.out.println("Enter the zipcode:");
-		String zipcode = inp.nextLine();
-		System.out.println("Enter the email-id:");
-		String email = inp.nextLine();
-		Person p = new Person(firstName, lastName, phonenum,city,state,zipcode,email);
-		contacts.add(p);
+		boolean found=false;
+		for (Person p : contacts) {
+			if(p.firstname==firstName);
+			found=true;
+			
+		
+		}
+		if (found==false) {
+			System.out.println("Enter the LastName:");
+			String lastName = inp.nextLine();
+			System.out.println("Enter the phone:");
+			String phonenum = inp.nextLine();
+			System.out.println("\nAddress Details:");
+			System.out.println("Enter the city:");
+			String city = inp.nextLine();
+			System.out.println("Enter the state:");
+			String state = inp.nextLine();
+			System.out.println("Enter the zipcode:");
+			String zipcode = inp.nextLine();
+			System.out.println("Enter the email-id:");
+			String email = inp.nextLine();
+			Person p = new Person(firstName, lastName, phonenum,city,state,zipcode,email);
+			contacts.add(p);
+			
+		}
+		else {
+			System.out.println("Already present");
+		}
+		
+		
 		
 		
 	}
