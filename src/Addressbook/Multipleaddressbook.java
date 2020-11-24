@@ -40,12 +40,11 @@ public class Multipleaddressbook  {
 		for (File file : files) {
 	System.out.println(file.getName());
 		}
-		
 		System.out.println("Enter the addressbook to open:");
 		filename = inp.nextLine();
 		boolean filefound = false;
-		for (File file :files) {
-			if(file.getName().equals(filename)) {
+		for (File file1 :files) {
+			if(file1.getName().equals(filename)) {
 				filefound = true;
 				int cond=1; 
 				while (cond == 1) {
@@ -86,10 +85,11 @@ public class Multipleaddressbook  {
 				}
 	}
 		}
+		
 	 if (filefound==false) {
 		 System.out.println("Addressbook not found");
 		 }
+		}
 		
-		
-	}
+	
 }

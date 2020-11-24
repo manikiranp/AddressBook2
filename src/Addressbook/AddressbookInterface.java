@@ -5,4 +5,5 @@ public interface AddressbookInterface {
 	public void display();
 	public void editperson();
 	public void deleteperson();
+	public void search();
 } 

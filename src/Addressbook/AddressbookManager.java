@@ -2,12 +2,11 @@ package Addressbook;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class AddressbookManager implements AddressbookInterface {
 	public static ArrayList<Person>  contacts = new ArrayList<Person> ();
-	
-	private Scanner inp;
-
+	private Scanner inp = new Scanner(System.in);
 	
 	
 	public void Addcontact() {
@@ -39,17 +38,13 @@ public class AddressbookManager implements AddressbookInterface {
 			Person p1 = new Person(firstName, lastName, phonenum,city,state,zipcode,email);
 			contacts.add(p1);
 			}
-//			else {
-//				System.out.println("Name already present");
-//			}
-	}
 
-		
+		}
 
 		public void display() {
-		for (Person person : contacts) {
-			System.out.println(person.toString());
-			
+		
+		for (Person p : contacts) {
+			System.out.println(p.toString());
 		}
 		
 	}
@@ -118,11 +113,12 @@ public class AddressbookManager implements AddressbookInterface {
 					}
 				}
 			}
-			public void search() {
-				int cond=1; 
-				while (cond == 1) {
-				Searching menu = new Searching();
-			System.out.println("Address Book:\n"
+		public void search() {
+			int cond=1; 
+			while (cond == 1) {
+			Searching menu = new Searching();
+			Stream.of(contacts);
+			System.out.println("Searching order:\n"
 				+ "1) Search by Person\n"
 				+ "2) Search by City\n"
 				+ "3) Search by State\n"
@@ -131,6 +127,7 @@ public class AddressbookManager implements AddressbookInterface {
 		System.out.println("Select an option:");
 		int num=inp.nextInt();
 		switch (num) {
+		
 		case 1:
 			menu.searchperson();
 			break;
