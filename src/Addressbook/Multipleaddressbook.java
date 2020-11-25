@@ -10,7 +10,7 @@ public class Multipleaddressbook  {
 	private Scanner inp = new Scanner(System.in);
 	String name,filename;
 	
-	HashMap<String,ArrayList<Person>> hashbook = new HashMap<String,ArrayList<Person>>(); 
+	 
 
 	public void Createaddressbook() {	 
 		System.out.println("Enter new addressbook name:");
@@ -58,24 +58,24 @@ public class Multipleaddressbook  {
 				+ "0) Close");
 		
 		System.out.println("Select an option:");
-		int num=inp.nextInt();
+		String num=inp.next();
 		switch (num) {
-		case 1:
+		case "1":
 			menu.Addcontact();
 			break;
-		case 2:
+		case "2":
 			menu.display();
 			break;
-		case 3:
+		case "3":
 			menu.editperson();
 			break;
-		case 4:
+		case "4":
 			menu.deleteperson();
 			break;
-		case 5:
-			menu.search();
+		case "5":
+			menu.Searching();
 			break;
-		case 0:
+		case "0":
 			cond=0;
 			break;
 		default:
